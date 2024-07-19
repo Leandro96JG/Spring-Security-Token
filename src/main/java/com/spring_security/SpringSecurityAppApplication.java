@@ -1,10 +1,10 @@
-package com.springSecurity;
+package com.spring_security;
 
-import com.springSecurity.persistence.entity.PermissionEntity;
-import com.springSecurity.persistence.entity.RoleEntity;
-import com.springSecurity.persistence.entity.RoleEnum;
-import com.springSecurity.persistence.entity.UserEntity;
-import com.springSecurity.persistence.entity.repository.UserRepository;
+import com.spring_security.persistence.entity.PermissionEntity;
+import com.spring_security.persistence.entity.RoleEntity;
+import com.spring_security.persistence.entity.RoleEnum;
+import com.spring_security.persistence.entity.UserEntity;
+import com.spring_security.persistence.entity.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

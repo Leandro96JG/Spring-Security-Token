@@ -1,6 +1,6 @@
-package com.springSecurity.persistence.entity.repository;
+package com.spring_security.persistence.entity.repository;
 
-import com.springSecurity.persistence.entity.UserEntity;
+import com.spring_security.persistence.entity.UserEntity;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

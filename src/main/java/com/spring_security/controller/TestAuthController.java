@@ -1,25 +1,27 @@
-package com.springSecurity.controller;
+package com.spring_security.controller;
 
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/auth")
-//deniega toodo al menos que este autorizado en el metedo de la req
+@RequestMapping("/method")
+//deniega toodo al menos que esté autorizado en el método de la req
 @PreAuthorize("denyAll()")
 public class TestAuthController {
 
 
     @GetMapping("/get")
-    //para autorizar mas permisos
-    @PreAuthorize("hasAuthority('READ') or hasAuthority('CREATED')")
+    //Recordar que también se pueden autorizar los permisos en los security config
+    //para autorizar más permisos
+    @PreAuthorize("permitAll()")
     public String helloGet(){
         return "Hello World - GET";
     }
 
     @PostMapping("/post")
-    @PreAuthorize("hasAuthority('READ')")
+    //Creo que hay problemas al usar más de 1 rol con este método
+    @PreAuthorize("hasAnyRole('ADMIN','DEVELOPER')")
     public String helloPost(){
         return "Hello World - POST";
     }
@@ -35,7 +37,7 @@ public class TestAuthController {
     }
 
     @PatchMapping("/patch")
-    @PreAuthorize("hasAuthority('REFACTOR')")
+    @PreAuthorize("hasAnyAuthority('REFACTOR')")
     public String helloPatch(){
         return "Hello World - PATCH";
     }

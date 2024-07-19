@@ -1,4 +1,4 @@
-package com.springSecurity.persistence.entity;
+package com.spring_security.persistence.entity;
 
 
 import jakarta.persistence.*;

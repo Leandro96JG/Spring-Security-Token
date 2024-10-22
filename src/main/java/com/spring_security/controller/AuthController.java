@@ -31,7 +31,6 @@ public class AuthController {
     @PostMapping("/sign-up")
     @PreAuthorize("permitAll()")
     public ResponseEntity<AuthReponse> register(@RequestBody @Valid AuthRegisterRequest authRegisterRequest){
-        System.out.println("body:"+authRegisterRequest);
         return new ResponseEntity<>(this.userDatailService.createUser(authRegisterRequest),HttpStatus.CREATED);
     }
 

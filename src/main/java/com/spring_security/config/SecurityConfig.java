@@ -54,7 +54,7 @@ public class SecurityConfig {
 //    }
 
     @Bean
-    //httpSecurity pasa por todos los filtros y lo van modificando
+    //httpSecurity pasa por todos los filtros
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 //proteje de atancante usando usuarios logeados

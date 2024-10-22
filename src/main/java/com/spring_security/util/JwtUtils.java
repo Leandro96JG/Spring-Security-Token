@@ -28,6 +28,7 @@ public class JwtUtils {
         Algorithm algorithm = Algorithm.HMAC256(this.privateKey);
 
         String username = authentication.getPrincipal().toString();
+
         String authorities = authentication.getAuthorities()
                 .stream()
                 .map(GrantedAuthority::getAuthority)
@@ -72,7 +73,7 @@ public class JwtUtils {
         return decodedJWT.getClaims();
     }
 
-    public String returnClaim(DecodedJWT decodedJWT, String clainName){
-        return decodedJWT.getClaim(clainName).toString();
+    public Claim returnClaim(DecodedJWT decodedJWT, String claimName){
+        return decodedJWT.getClaim(claimName);
     }
 }

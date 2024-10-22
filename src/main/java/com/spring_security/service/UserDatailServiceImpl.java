@@ -102,6 +102,8 @@ public class UserDatailServiceImpl implements UserDetailsService{
     }
 
     public AuthReponse createUser(AuthRegisterRequest authRegisterRequest){
+
+
         String username = authRegisterRequest.username();
         String password = authRegisterRequest.password();
         List<String> roleRequest = authRegisterRequest.roleRequest().roleListName();
@@ -131,8 +133,8 @@ public class UserDatailServiceImpl implements UserDetailsService{
 
         Authentication authentication = new UsernamePasswordAuthenticationToken(userCreated.getUsername(),userCreated.getPassword(),authorityList);
 
-        String acessToken = jwtUtils.createToken(authentication);
+        String accessToken = jwtUtils.createToken(authentication);
 
-      return new AuthReponse(userCreated.getUsername(),"User created successfully",acessToken,true);
+      return new AuthReponse(userCreated.getUsername(),"User created successfully",accessToken,true);
     }
 }

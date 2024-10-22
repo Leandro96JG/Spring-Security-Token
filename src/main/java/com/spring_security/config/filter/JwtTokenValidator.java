@@ -42,7 +42,7 @@ public class JwtTokenValidator extends OncePerRequestFilter {
             //extraemos el username token
             String username = jwtUtils.extractUserName(decodedJWT);
             //claims del token en forma de string
-            String stringAuthorities = jwtUtils.returnClaim(decodedJWT, "authorities");
+            String stringAuthorities = jwtUtils.returnClaim(decodedJWT, "authorities").asString();
             //Recibe los permisos separados por coma
             //Collection indíca que la colección puede contener cualquier tipo que sea una subclase de GrantedAuthority.
             Collection<? extends GrantedAuthority> authorities = AuthorityUtils.commaSeparatedStringToAuthorityList(stringAuthorities);
